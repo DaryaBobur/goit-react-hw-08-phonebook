@@ -1,8 +1,8 @@
-import { useDispatch  } from 'react-redux';
-import { useEffect } from 'react';
+
+
 import { Toaster } from 'react-hot-toast';
 
-import { fetchContacts } from 'redux/operations';
+
 import { ContainerApp} from './AppStyled';
 
 import { Routes, Route } from "react-router-dom";
@@ -12,11 +12,8 @@ import Contacts from 'page/Contacts/Contacts';
 import Register from 'page/Register/Register';
 import Login from 'page/Login/Login';
 const App = () => {
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+
 
   return (
     <ContainerApp>

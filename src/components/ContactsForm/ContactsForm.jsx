@@ -5,7 +5,6 @@ import { nanoid } from 'nanoid';
 import { Form } from './ContactsFormStyled';
 import { addContact} from 'redux/operations';
 import { BsPersonPlusFill, BsPhone } from "react-icons/bs";
-
 const ContactForm = () =>  {
 
   const dispatch = useDispatch();
@@ -46,7 +45,7 @@ const ContactForm = () =>  {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <label htmlFor='htmlFor={userInputId}'><BsPersonPlusFill/>Name
+      <label htmlFor='{userInputId}'><BsPersonPlusFill/>Name
         <input 
             type="text"
             name="name"
@@ -74,6 +73,7 @@ const ContactForm = () =>  {
 
       <button type="submit">Add contact</button>
     </Form>
+
   );
 }
 

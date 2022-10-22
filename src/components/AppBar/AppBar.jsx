@@ -1,11 +1,12 @@
 import Navigation from "components/Navigation/Navigation";
 import AuthNav from "components/AuthNav/AuthNav";
-
+import UserMenu from "components/UserMenu/UserMenu";
 const AppBar = () => {
 return (
     <header>
         <Navigation/>
         <AuthNav/>
+        <UserMenu/>
     </header>
 )
 }

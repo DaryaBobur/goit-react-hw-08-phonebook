@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { filterName } from 'redux/filterSlice';
-import { getFilter, getContacts, getIsLoading, getError } from "redux/selectors";
+import { filterName } from 'redux/contacts/filterSlice';
+import { getFilter, getContacts, getIsLoading, getError } from "redux/contacts/selectors";
 import ContactsList from "components/ContactsList/ContactsList";
 import { Label } from "./FilterStyled";
 import Loader from 'components/Loader/Loader';

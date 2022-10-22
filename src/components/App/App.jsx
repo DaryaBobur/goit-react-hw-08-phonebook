@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
 
 import { fetchContacts } from 'redux/operations';
-import { ContainerApp, Title, Subtitle } from './AppStyled';
+import { ContainerApp} from './AppStyled';
 
 import { Routes, Route } from "react-router-dom";
 import AppBar from 'components/AppBar/AppBar';

@@ -38,12 +38,13 @@ export const contactsSlice = createSlice({
 
     [deleteContact.pending]: handlePending,
     [deleteContact.fulfilled](state, action) {
+
       state.isLoading = false;
       state.error = null;
-      const index = state.items.findIndex(contact => contact.id === action.payload.id);
+      const index = state.items.findIndex((contact) => contact.id === action.meta.arg);
         state.items.splice(index, 1);
-        toast.success(`Contact ${action.payload.name} deleted!`);
-        console.log(state)
+        toast.success(`Contact is deleted!`);
+   
     },
     [deleteContact.rejected]: handleRejected,
   },

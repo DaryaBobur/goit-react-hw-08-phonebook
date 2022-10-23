@@ -1,34 +1,35 @@
 
-
-import { Toaster } from 'react-hot-toast';
-
-
 import { ContainerApp} from './AppStyled';
-
 import { Routes, Route } from "react-router-dom";
-import AppBar from 'components/AppBar/AppBar';
+import Layout from 'components/Layout/Layout';
 import Home from 'page/Home/Home';
 import Contacts from 'page/Contacts/Contacts';
 import Register from 'page/Register/Register';
 import Login from 'page/Login/Login';
-const App = () => {
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { currentUser } from 'redux/usersAuth/operations';
 
+const App = () => {
+const dispatch = useDispatch();
+
+useEffect(()=> {
+  dispatch(currentUser());
+}, [dispatch])
 
 
   return (
     <ContainerApp>
-<AppBar/>
     <Routes>
-      <Route path="/" element={<Home />}/>
-      <Route path="/register" element={<Register />}/>
-      <Route path="/login" element={<Login />}/>
-      <Route path="/contacts" element={<Contacts />}/>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/register" element={<Register />}/>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/contacts" element={<Contacts />}/>
+      </Route>
     </Routes>
     
-      <Toaster
-        position="top-right"
-        reverseOrder={false}
-      />
+      
 
     </ContainerApp>
   )

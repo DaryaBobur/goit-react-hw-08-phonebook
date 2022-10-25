@@ -1,38 +1,34 @@
 import ContactForm from '../../components/ContactsForm/ContactsForm';
 import Filter from '../../components/Filter/Filter';
 import { FcPhoneAndroid } from "react-icons/fc";
-import { Title, Subtitle } from '../../components/App/AppStyled';
+import { TitlePhonebook, SubtitleContacts } from './ContactsStyled';
+import { Container } from 'components/UniversalStyles/ContainerStyled';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
-// import { useSelector } from "react-redux";
-// import { getIsLoggedIn } from "redux/usersAuth/selectors";
 
 
 const Contacts = () => {
-  // const isLoggedIn = useSelector(getIsLoggedIn)
-  // console.log(isLoggedIn)
+
 const dispatch = useDispatch();
   useEffect(() => {
-
       dispatch(fetchContacts());
-
   }, [dispatch]);
 
 return (
-    <>
+    <Container>
     
-      <Title>
+      <TitlePhonebook>
         <FcPhoneAndroid/>
         Phonebook
-      </Title>
+      </TitlePhonebook>
 
       <ContactForm />
 
-      <Subtitle>Contacts</Subtitle>
+      <SubtitleContacts>Contacts:</SubtitleContacts>
 
       <Filter /> 
-    </>
+    </Container>
 )
 }
 

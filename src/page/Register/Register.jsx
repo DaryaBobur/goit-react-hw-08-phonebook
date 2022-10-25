@@ -1,11 +1,15 @@
 import RegisterForm from "components/RegisterForm/RegisterForm";
-
+import { Container } from "components/UniversalStyles/ContainerStyled";
+import { Title } from "components/UniversalStyles/TitleStyled";
+import { BsFillPersonFill } from "react-icons/bs";
 const Register = () => {
 return (
-    <>
-    <h2>Registration</h2>
+    <Container>
+    <Title>Registration Page <BsFillPersonFill/></Title>
+    
     <RegisterForm/>
-    </>
+
+    </Container>
 )
 }
 

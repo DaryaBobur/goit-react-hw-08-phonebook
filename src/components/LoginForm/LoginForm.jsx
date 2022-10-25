@@ -1,5 +1,8 @@
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { logInUser } from 'redux/usersAuth/operations';
+import { Form } from './LoginFormStyled';
+import { GoMail, GoLock } from "react-icons/go";
 
 const LoginForm = () => {
     const dispatch = useDispatch();
@@ -14,17 +17,23 @@ const LoginForm = () => {
          formData.reset();   
     }
 return (
-    <form onSubmit={handleSubmit}>
-        <label>Email
+    <Form onSubmit={handleSubmit}>
+        <label>
+        <GoMail/>Email
             <input type="email" name="email" />
         </label>
-        <label>Password
+        <label>
+        <GoLock/>Password
             <input type="password" name="password" />
         </label>
-        <button type="submit">Log In</button>
+        <button variant="contained" type="submit">Log In</button>
 
-    </form>
+    </Form>
 )
+}
+
+LoginForm.propTypes = {
+    onSubmit: PropTypes.func,
 }
 
 export default LoginForm;

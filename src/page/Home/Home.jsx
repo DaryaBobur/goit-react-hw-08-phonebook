@@ -1,10 +1,12 @@
-import { FcPhoneAndroid } from "react-icons/fc";
+import { FcTwoSmartphones } from "react-icons/fc";
+import { Container } from "./HomeStyled";
+
 
 const Home = () => {
     return (
-        <div>
-        <p><FcPhoneAndroid/>Welcome Phonebook App</p>
-        </div>
+        <Container>
+        <h1><FcTwoSmartphones size={40}/>Welcome Phonebook App</h1>
+        </Container>
     )
 }
 

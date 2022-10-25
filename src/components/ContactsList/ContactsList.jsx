@@ -9,7 +9,7 @@ const ContactsList = ({ contacts }) => {
    const dispatch = useDispatch();
    return (  
       <Contacts>
-         {contacts.map(({name, number, id}) => ( 
+         {contacts.map(({ name, number, id }) => ( 
             <li key={nanoid()}>
                <p><BsPersonCircle/> {name} : {number}</p>
                <button type='button' onClick={()=> dispatch(deleteContact(id))}>

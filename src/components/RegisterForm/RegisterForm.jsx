@@ -1,6 +1,8 @@
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/usersAuth/operations';
-
+import { Form } from './RegisterFormStyled';
+import { GoMail, GoLock, GoPerson } from "react-icons/go";
 const RegisterForm = () => {
     const dispatch = useDispatch();
 
@@ -15,19 +17,23 @@ const RegisterForm = () => {
          formData.reset();   
     }
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="">Name
+        <Form onSubmit={handleSubmit}>
+            <label><GoPerson/>Name
             <input type="name" name="name"/>
             </label>
-            <label>Email
+            <label><GoMail/>Email
             <input type="email" name="email" />
             </label>
-            <label>Password
+            <label><GoLock/>Password
             <input type="password" name="password" />
             </label>
             <button type="submit">Register</button>
-        </form>
+        </Form>
     )
+}
+
+RegisterForm.propTypes = {
+onSubmit: PropTypes.func,
 }
 
 export default RegisterForm;

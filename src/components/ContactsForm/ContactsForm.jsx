@@ -4,7 +4,12 @@ import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { Form } from './ContactsFormStyled';
 import { addContact} from 'redux/contacts/operations';
-import { BsPersonPlusFill, BsPhone } from "react-icons/bs";
+// import { BsPersonPlusFill, BsPhone } from "react-icons/bs";
+
+import PersonAddAltSharpIcon from '@mui/icons-material/PersonAddAltSharp';
+import PhoneIphoneSharpIcon from '@mui/icons-material/PhoneIphoneSharp';
+import TextField from '@mui/material/TextField';
+
 const ContactForm = () =>  {
 
   const dispatch = useDispatch();
@@ -45,31 +50,37 @@ const ContactForm = () =>  {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <label htmlFor='{userInputId}'><BsPersonPlusFill/>Name
-        <input 
-            type="text"
-            name="name"
-            id={userInputId}
-            value={name}
-            onChange={handleChange}
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
-        /> 
-      </label>
+      <div>
+      <PersonAddAltSharpIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }}/>
+      <TextField 
+      id={userInputId} 
 
-      <label htmlFor="{userInputId}"><BsPhone/>Number
-        <input
-            type="tel"
-            name="number"
-            id={userInputId}
-            value={number}
-            onChange={handleChange}
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
-        />
-      </label>
+      label="Name" 
+      variant="standard"
+      value={name}
+      type="text"
+      name="name"
+      onChange={handleChange}
+      pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+      title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+      required
+      />
+</div>
+
+    <PhoneIphoneSharpIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }}/>
+      <TextField 
+      id={userInputId} 
+      margin="normal"
+      label="Number" 
+      variant="standard"
+      value={number}
+      type="tel"
+      name="number"
+      onChange={handleChange}
+      pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+      title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+      required
+      />
 
       <button type="submit">Add contact</button>
     </Form>

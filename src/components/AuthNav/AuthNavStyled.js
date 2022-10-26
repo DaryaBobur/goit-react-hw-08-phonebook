@@ -22,4 +22,8 @@ text-decoration: none;
   &.active {
       color: #6495ad;
   }
+
+  :hover, :focus {
+    color: #a0d2eb;
+  } 
 `

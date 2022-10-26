@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from "react-redux";

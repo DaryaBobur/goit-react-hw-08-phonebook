@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import MailSharpIcon from '@mui/icons-material/MailSharp';
 import PersonSharpIcon from '@mui/icons-material/PersonSharp';
 import LockPersonSharpIcon from '@mui/icons-material/LockPersonSharp';
+
 const RegisterForm = () => {
     const dispatch = useDispatch();
 
@@ -19,59 +20,65 @@ const RegisterForm = () => {
             email: formData.elements.email.value,
             password: formData.elements.password.value,
         }))
-         formData.reset();   
+        formData.reset();   
     }
+
     return (
         <Form onSubmit={handleSubmit}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <PersonSharpIcon sx={{mr: 1, my: 0.5, color: '#2a2a2a' }}/>
-             <TextField       
-            size="small"
-            label="Name" 
-            variant="outlined"
-            type="text"
-            name="name"
-            margin="dense"
-            required
-      />
-      </Box>
+                <PersonSharpIcon 
+                    sx={{mr: 1, my: 0.5, color: '#2a2a2a' }}
+                />
 
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-<MailSharpIcon sx={{mr: 1, my: 0.5, color: '#2a2a2a' }}/>
-<TextField
-     margin="dense"
-      size="small"
-      label="Email" 
-      variant="outlined"
-      type="email"
-      name="email"
-        required
-     
-      />
-   </Box>
+                <TextField       
+                    size="small"
+                    label="Name" 
+                    variant="outlined"
+                    type="text"
+                    name="name"
+                    margin="dense"
+                    required
+                />
+            </Box>
 
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-<LockPersonSharpIcon sx={{mr: 1, my: 0.5, color: '#2a2a2a' }}/>
-<TextField 
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <MailSharpIcon 
+                    sx={{mr: 1, my: 0.5, color: '#2a2a2a' }}
+                />
 
-      size="small"
-      label="Password" 
-      variant="outlined"
-      margin="dense"
-      
-      type="password"
-      name="password"
-      required
-      />
+                <TextField
+                    margin="dense"
+                    size="small"
+                    label="Email" 
+                    variant="outlined"
+                    type="email"
+                    name="email"
+                    required
+                />
+            </Box>
 
-</Box>
-      <Button variant="contained" type="submit">Register</Button>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <LockPersonSharpIcon 
+                    sx={{mr: 1, my: 0.5, color: '#2a2a2a' }}
+                />
+
+                <TextField 
+                    size="small"
+                    label="Password" 
+                    variant="outlined"
+                    margin="dense"
+                    type="password"
+                    name="password"
+                    required
+                />
+            </Box>
+            <Button variant="contained" type="submit">Register</Button>
         </Form>
     )
 }
 
 RegisterForm.propTypes = {
-onSubmit: PropTypes.func,
+    onSubmit: PropTypes.func,
 }
 
 export default RegisterForm;

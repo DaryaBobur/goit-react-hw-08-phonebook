@@ -25,7 +25,6 @@ const App = () => {
   return (
     <>
     { !isCurrentUser &&
-      <Suspense>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -34,7 +33,6 @@ const App = () => {
             <Route path="/contacts" element={<PrivateRoute redirectTo="/login" component={<Contacts/>} />}/>
           </Route>
         </Routes>
-     </Suspense>
     }
     </>
   )

@@ -69,7 +69,9 @@ const RegisterForm = () => {
                     margin="dense"
                     type="password"
                     name="password"
+                    inputProps={{ minlength: "7"  }}
                     required
+       
                 />
             </Box>
             <Button variant="contained" type="submit">Register</Button>

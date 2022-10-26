@@ -9,7 +9,7 @@ const setAuthenticationUser = token => {
 
 const clearAuthenticationUser = () => {
     axios.defaults.headers.common.Authorization = '';
-  };
+};
 
 export const registerUser = createAsyncThunk(
     'users/register', async (dataUsers, thunkAPI) => {
@@ -51,10 +51,9 @@ export const currentUser = createAsyncThunk(
    "users/current", async(_, thunkAPI) => {
     const state = thunkAPI.getState();
     const savedToken = state.users.token;
-    console.log(savedToken)
+
     if(savedToken === null) {
-        console.log('Токена нет, уходим из function');
-    return thunkAPI.rejectWithValue();
+        return thunkAPI.rejectWithValue();
     }
 
     try {

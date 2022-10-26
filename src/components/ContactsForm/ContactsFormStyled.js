@@ -8,19 +8,15 @@ margin-bottom: 30px;
 
 
 button {
-    display: inline-block;
-    border: 0;
-    padding: 5px 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
     color: #2a2a2a;
-    
+    margin-top: 10px;
     font-weight: 700;
     font-size: 14px;
-    line-height: 1.88;
-    letter-spacing: 0.06em;
+    line-height: 1.15;
     background-color: #cad7e3;
-    cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
    
     :hover, :focus {
@@ -28,4 +24,9 @@ button {
         color: #544d4d;
     }
 }
+`
+
+export const ContainerForm = styled.div`
+display: flex;
+align-items: center;
 `

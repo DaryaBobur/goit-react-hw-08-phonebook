@@ -13,7 +13,6 @@ const UserMenu = () => {
   return (
   <Menu>
     <Avatar 
-      src="broken-image.jpg"
       sx={{ width: 24, height: 24 }} 
     />
     <p>Welcome, {userEmail}!</p>

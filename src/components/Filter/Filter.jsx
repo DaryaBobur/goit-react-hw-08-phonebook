@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
+import TextField from '@mui/material/TextField';
 import { filterName } from 'redux/contacts/filterSlice';
 import { getFilter, getContacts, getIsLoading, getError } from "redux/contacts/selectors";
 import ContactsList from "components/ContactsList/ContactsList";
 import Loader from 'components/Loader/Loader';
-import TextField from '@mui/material/TextField';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -37,13 +37,13 @@ const Filter = () => {
   return (
     <>
      <TextField 
-      label="Find contacts by name" 
-      variant="outlined"
-      value={dataFilter} 
-      type="text"
-      name="filter"
-      onChange={filterNamesContacts}
-      size="small"
+        label="Find contacts by name" 
+        variant="outlined"
+        value={dataFilter} 
+        type="text"
+        name="filter"
+        onChange={filterNamesContacts}
+        size="small"
       />
 
       {dataContacts && <ContactsList contacts={getFilteredContacts()} />}

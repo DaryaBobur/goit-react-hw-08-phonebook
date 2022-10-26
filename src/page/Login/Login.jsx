@@ -6,8 +6,11 @@ import { Title } from "components/UniversalStyles/TitleStyled";
 const Login = () => {
     return (
         <Container>
-         <Title>Login page <PersonSharpIcon/></Title>
-         <LoginForm/>
+            <Title>
+                Login page
+                <PersonSharpIcon/>
+            </Title>
+            <LoginForm/>
         </Container>
     )
 } 

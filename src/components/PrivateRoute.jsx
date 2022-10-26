@@ -4,10 +4,10 @@ import { Navigate } from "react-router-dom";
 import { getIsLoggedIn, getIsCurrentUser } from "redux/usersAuth/selectors";
 
 const PrivateRoute = ({ component, redirectTo='/'}) => {
-const isLoggedIn = useSelector(getIsLoggedIn);
-const isCurrentUser = useSelector(getIsCurrentUser);
-const isRedirected = !isLoggedIn && !isCurrentUser;
-return isRedirected ? <Navigate to={redirectTo} /> : component;
+    const isLoggedIn = useSelector(getIsLoggedIn);
+    const isCurrentUser = useSelector(getIsCurrentUser);
+    const isRedirected = !isLoggedIn && !isCurrentUser;
+    return isRedirected ? <Navigate to={redirectTo} /> : component;
 }
 
 PrivateRoute.propTypes = {

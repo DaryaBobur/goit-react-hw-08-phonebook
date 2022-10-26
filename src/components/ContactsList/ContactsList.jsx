@@ -3,7 +3,10 @@ import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
 import { Contacts } from './ContactsListStyled';
 import { deleteContact } from '../../redux/contacts/operations'
-import { BsFillTrashFill, BsPersonCircle } from "react-icons/bs";
+
+import IconButton from '@mui/material/IconButton'
+import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp';
+import DeleteSharpIcon from '@mui/icons-material/DeleteSharp';
 
 const ContactsList = ({ contacts }) => {
    const dispatch = useDispatch();
@@ -11,10 +14,10 @@ const ContactsList = ({ contacts }) => {
       <Contacts>
          {contacts.map(({ name, number, id }) => ( 
             <li key={nanoid()}>
-               <p><BsPersonCircle/> {name} : {number}</p>
-               <button type='button' onClick={()=> dispatch(deleteContact(id))}>
-                  <BsFillTrashFill/>
-               </button>
+               <p><AccountCircleSharpIcon/> {name} : {number}</p>
+               <IconButton aria-label="delete" size="small" type='button' onClick={()=> dispatch(deleteContact(id))}>
+                 <DeleteSharpIcon fontSize="small" />
+               </IconButton>
             </li>
          ))}
       </Contacts>

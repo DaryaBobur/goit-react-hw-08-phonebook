@@ -2,7 +2,12 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/usersAuth/operations';
 import { Form } from './RegisterFormStyled';
-import { GoMail, GoLock, GoPerson } from "react-icons/go";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+import MailSharpIcon from '@mui/icons-material/MailSharp';
+import PersonSharpIcon from '@mui/icons-material/PersonSharp';
+import LockPersonSharpIcon from '@mui/icons-material/LockPersonSharp';
 const RegisterForm = () => {
     const dispatch = useDispatch();
 
@@ -18,16 +23,49 @@ const RegisterForm = () => {
     }
     return (
         <Form onSubmit={handleSubmit}>
-            <label><GoPerson/>Name
-            <input type="name" name="name"/>
-            </label>
-            <label><GoMail/>Email
-            <input type="email" name="email" />
-            </label>
-            <label><GoLock/>Password
-            <input type="password" name="password" />
-            </label>
-            <button type="submit">Register</button>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <PersonSharpIcon sx={{mr: 1, my: 0.5, color: '#2a2a2a' }}/>
+             <TextField       
+            size="small"
+            label="Name" 
+            variant="outlined"
+            type="text"
+            name="name"
+            margin="dense"
+            required
+      />
+      </Box>
+
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+<MailSharpIcon sx={{mr: 1, my: 0.5, color: '#2a2a2a' }}/>
+<TextField
+     margin="dense"
+      size="small"
+      label="Email" 
+      variant="outlined"
+      type="email"
+      name="email"
+        required
+     
+      />
+   </Box>
+
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+<LockPersonSharpIcon sx={{mr: 1, my: 0.5, color: '#2a2a2a' }}/>
+<TextField 
+
+      size="small"
+      label="Password" 
+      variant="outlined"
+      margin="dense"
+      
+      type="password"
+      name="password"
+      required
+      />
+
+</Box>
+      <Button variant="contained" type="submit">Register</Button>
         </Form>
     )
 }

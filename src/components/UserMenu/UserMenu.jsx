@@ -3,6 +3,8 @@ import { getUserEmail } from "redux/usersAuth/selectors";
 import { useDispatch } from "react-redux";
 import { logOutUser } from "redux/usersAuth/operations";
 import { Menu } from "./UserMenuStyled";
+import Button from '@mui/material/Button';
+import Avatar from '@mui/material/Avatar';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
@@ -10,8 +12,12 @@ const UserMenu = () => {
 
 return (
 <Menu>
+<Avatar 
+src="/broken-image.jpg"
+sx={{ width: 24, height: 24 }} 
+/>
   <p>Welcome, {userEmail}!</p>
-  <button type="button" onClick={()=> dispatch(logOutUser())}>Logout</button>
+  <Button variant="contained" type="button" onClick={()=> dispatch(logOutUser())}>logout</Button>
 </Menu>
 )
 }

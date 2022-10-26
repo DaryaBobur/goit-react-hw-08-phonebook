@@ -2,14 +2,13 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
-import { Form } from './ContactsFormStyled';
+import { Form, ContainerForm } from './ContactsFormStyled';
 import { addContact} from 'redux/contacts/operations';
-// import { BsPersonPlusFill, BsPhone } from "react-icons/bs";
 
 import PersonAddAltSharpIcon from '@mui/icons-material/PersonAddAltSharp';
 import PhoneIphoneSharpIcon from '@mui/icons-material/PhoneIphoneSharp';
 import TextField from '@mui/material/TextField';
-
+import Button from '@mui/material/Button';
 const ContactForm = () =>  {
 
   const dispatch = useDispatch();
@@ -50,14 +49,15 @@ const ContactForm = () =>  {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <div>
-      <PersonAddAltSharpIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }}/>
+      <ContainerForm>
+      <PersonAddAltSharpIcon sx={{ mr: 1, my: 0.5 }}/>
       <TextField 
       id={userInputId} 
-
+      size="small"
       label="Name" 
-      variant="standard"
+      variant="outlined"
       value={name}
+      
       type="text"
       name="name"
       onChange={handleChange}
@@ -65,14 +65,15 @@ const ContactForm = () =>  {
       title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
       required
       />
-</div>
-
-    <PhoneIphoneSharpIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }}/>
+</ContainerForm>
+<ContainerForm>
+    <PhoneIphoneSharpIcon sx={{ mr: 1, my: 0.5 }}/>
       <TextField 
       id={userInputId} 
+      size="small"
       margin="normal"
       label="Number" 
-      variant="standard"
+      variant="outlined"
       value={number}
       type="tel"
       name="number"
@@ -81,8 +82,9 @@ const ContactForm = () =>  {
       title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
       required
       />
+</ContainerForm>
 
-      <button type="submit">Add contact</button>
+<Button variant="contained" type="submit">Add contact</Button>
     </Form>
 
   );

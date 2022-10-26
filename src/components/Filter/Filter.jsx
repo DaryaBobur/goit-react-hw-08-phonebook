@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { filterName } from 'redux/contacts/filterSlice';
 import { getFilter, getContacts, getIsLoading, getError } from "redux/contacts/selectors";
 import ContactsList from "components/ContactsList/ContactsList";
-import { Label } from "./FilterStyled";
 import Loader from 'components/Loader/Loader';
-
+import TextField from '@mui/material/TextField';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -37,13 +36,15 @@ const Filter = () => {
 
   return (
     <>
-      <Label>
-        Find contacts by name
-        <input type="text" 
-        value={dataFilter} 
-        name="filter" 
-        onChange={filterNamesContacts} />
-      </Label>
+     <TextField 
+      label="Find contacts by name" 
+      variant="outlined"
+      value={dataFilter} 
+      type="text"
+      name="filter"
+      onChange={filterNamesContacts}
+      size="small"
+      />
 
       {dataContacts && <ContactsList contacts={getFilteredContacts()} />}
       {isLoading && !isError && <Loader/>}

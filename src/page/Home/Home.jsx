@@ -4,7 +4,12 @@ import SupervisorAccountSharpIcon from '@mui/icons-material/SupervisorAccountSha
 const Home = () => {
     return (
         <Container>
-        <h1><SupervisorAccountSharpIcon sx={{mr: 1, my: 0.5, fontSize: 45 }}/>Welcome Phonebook App</h1>
+            <h1>
+                <SupervisorAccountSharpIcon 
+                    sx={{mr: 1, my: 0.5, fontSize: 45 }}
+                />
+                Welcome Phonebook App
+            </h1>
         </Container>
     )
 }

@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 
 export const Menu = styled.div`
-display: flex;
-align-items: center;
-gap: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 
 p {
     font-weight: 500;

@@ -1,6 +1,5 @@
 import ContactForm from '../../components/ContactsForm/ContactsForm';
 import Filter from '../../components/Filter/Filter';
-// import { FcPhoneAndroid } from "react-icons/fc";
 import ContactPhoneSharpIcon from '@mui/icons-material/ContactPhoneSharp';
 import { TitlePhonebook, SubtitleContacts } from './ContactsStyled';
 import { Container } from 'components/UniversalStyles/ContainerStyled';
@@ -8,29 +7,26 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
 
-
 const Contacts = () => {
 
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
   useEffect(() => {
-      dispatch(fetchContacts());
+    dispatch(fetchContacts());
   }, [dispatch]);
 
-return (
+  return (
     <Container>
-    
+      
       <TitlePhonebook>
         <ContactPhoneSharpIcon sx={{mr: 1, my: 0.5, fontSize: 35 }}/>
         Phonebook
       </TitlePhonebook>
-
       <ContactForm />
-
       <SubtitleContacts>Contacts:</SubtitleContacts>
-
       <Filter /> 
     </Container>
-)
+  )
 }
 
 export default Contacts;
